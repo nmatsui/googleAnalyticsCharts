@@ -23,7 +23,8 @@ module Gruff
         end
       end
 
-      current_x_offset = center(sum(label_widths.first))
+      #current_x_offset = center(sum(label_widths.first))
+      current_x_offset =  50
       current_y_offset =  @hide_title ?
       @top_margin + title_margin :
         @top_margin + title_margin + @title_caps_height

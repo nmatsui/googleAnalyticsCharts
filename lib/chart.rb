@@ -32,8 +32,11 @@ class Chart
     @gruff.maximum_value    = y_max
     @gruff.minimum_value    = 0
     data.keys.each do |series|
+      pv = data[series][:pageviews].reduce(:+)
       puts "#{series}:#{data[series][:pageviews]}"
-      @gruff.data(series, data[series][:pageviews], data[series][:color])
+      @gruff.data("#{series} :: #{pv}PV", 
+                  data[series][:pageviews], 
+                  data[series][:color])
     end
     @gruff.write(filename)
   end

@@ -19,13 +19,14 @@ class GoogleAnalytics
 
   def pageviews(start_date, end_date, page_limit)
     colors = [
+      "#ffff00",
       "#55aaff",
       "#ff0000",
       "#00ff00",
       "#ff0080",
-      "#ffff00",
       "#ff8000",
       "#8000ff",
+      "#dfdfdf",
       "#0000ff",
       "#aa8055",
       "#aaaa55"
@@ -41,7 +42,7 @@ class GoogleAnalytics
       result["total"] ||= Hash.new
       result["total"][:pageviews] ||= Array.new
       result["total"][:pageviews].push(total.pageviews.to_i)
-      result["total"][:color] ||= "#ffffff"
+      result["total"][:color] ||= colors.shift
     end
     @profile.alls({
       :sort       => :pageviews.desc,

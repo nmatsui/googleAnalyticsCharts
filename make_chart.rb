@@ -7,7 +7,7 @@ require 'lib/google_analytics'
 require 'lib/chart'
 
 PAGE_LIMIT     = 10
-PAGE_Y_MAX     = 700
+PAGE_Y_MAX     = 750
 REF_Y_MAX      = 300
 
 unless ARGV.length == 1 && /^(\d{4})-(\d{2})$/ =~ ARGV.first
